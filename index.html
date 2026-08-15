@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2e5e5a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>日语学习卡片</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div><span class="eyebrow">每日一点</span><h1>日语学习卡片</h1></div>
+      <button id="loadButton" class="text-button" type="button">更换 TXT</button>
+      <input id="fileInput" type="file" accept=".txt,text/plain" hidden>
+    </header>
+
+    <div class="progress-row">
+      <span id="progressText">正在读取笔记…</span>
+      <div class="progress-track"><div id="progressBar"></div></div>
+    </div>
+
+    <section class="question card" aria-live="polite">
+      <button id="speakButton" class="sound" type="button" aria-label="播放日语发音">♪</button>
+      <p id="japanese" class="japanese">—</p>
+      <p id="romaji" class="romaji"></p>
+    </section>
+
+    <button id="revealButton" class="reveal" type="button">显示答案</button>
+
+    <section id="answer" class="answer card" hidden>
+      <div class="answer-block"><span>假名</span><p id="kana"></p></div>
+      <div class="answer-block"><span>中文</span><p id="chinese" class="chinese"></p></div>
+      <div id="wordsSection"><h2>单词解析</h2><div id="words"></div></div>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+    <nav>
+      <button id="previousButton" type="button">← 上一张</button>
+      <button id="randomButton" type="button" aria-label="随机一张">随机</button>
+      <button id="nextButton" class="primary" type="button">下一张 →</button>
+    </nav>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
